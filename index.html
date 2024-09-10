@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook P1-DZ02</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { width: 95%; margin: auto; }
+        .dropdown { margin-bottom: 20px; }
+        .time-title { font-size: 1.2em; font-weight: bold; }
+        .activity { margin-bottom: 30px; }
+        .banner { background-color: #4CAF50; color: white; padding: 10px; cursor: pointer; }
+        .title { font-weight: bold; }
+        .subtitle { font-style: italic; }
+        .content { display: none; padding: 10px; border: 1px solid #ddd; }
+        .section { margin-bottom: 15px; display: flex; }
+        .step-title { font-weight: bold; width: 50%; }
+        .dialogue { width: 50%; font-style: italic; text-align: right; }
+        .dialogue-header { font-weight: bold; font-style: italic; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Playbook P1-DZ02</h1>
+        
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateContent()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+        
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+        
+        <div id="activity-0" class="activity">
+            <div class="banner" onclick="toggleContent('revision_mision')">
+                <div class="title">📚 Actividad 0: Revisión Misión (1 paso) ⏰ Tiempo: N/A</div>
+                <div class="subtitle">Revisar la misión del día.</div>
+            </div>
+            <div id="revision_mision" class="content">
+                <div class="section">
+                    <div class="step-title">PASO 1: Revisar diapositiva 1 para poder preparar la misión.</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        N/A
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="activity-1" class="activity">
+            <div class="banner" onclick="toggleContent('saludo_ritual')">
+                <div class="title">🎉 Actividad 1: Saludo y Ritual Gnius Club (4 pasos) ⏰ Tiempo: 3 minutos</div>
+                <div class="subtitle">Dar la bienvenida a los Genios y preparar el ambiente para el aprendizaje.</div>
+            </div>
+            <div id="saludo_ritual" class="content">
+                <div class="section">
+                    <div class="step-title">PASO 1 (1 minuto): Revisar diapositiva 2 "Logotipo de Gnius Club".</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        ¡Buenos días, pequeños exploradores digitales! Hoy vamos a descubrir cómo utilizamos internet en nuestra vida diaria. ¿Listos para empezar esta aventura?
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="step-title">PASO 2 (0.5 minutos): Revisar dispositiva 3 "¿Cómo estas?"</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        Vamos a hacer una pequeña pausa para saber cómo se sienten hoy. Si te sientes muy bien y listo para aprender, levanta la mano. Si te sientes un poco cansado o preocupado, coloca tu mano en tu pecho.
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="step-title">PASO 3 (0.5 minutos): Revisar diapositiva 4 "Gracias por asistir"</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        Vamos a juntar nuestras manos en agradecimiento por lo que vamos a aprender hoy. ¡Gracias por asistir!
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="step-title">PASO 4 (1 minuto): Revisar diapositiva 5 "Objetivos de la Misión".</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        Hoy, nuestra misión tiene tres objetivos emocionantes: 1. Identificar los dispositivos que usamos para conectarnos a internet. 2. Comprender qué actividades realizamos con ellos. 3. Explorar cómo la tecnología nos ayuda en nuestras vidas diarias.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="activity-2" class="activity">
+            <div class="banner" onclick="toggleContent('innovacion_dia')">
+                <div class="title">💡 Actividad 2: Innovación del Día (2 pasos) ⏰ Tiempo: 5 minutos</div>
+                <div class="subtitle">Introducir a los estudiantes a un concepto innovador relacionado con el tema.</div>
+            </div>
+            <div id="innovacion_dia" class="content">
+                <div class="section">
+                    <div class="step-title">PASO 1 (1 minuto): Revisar diapositiva 6 "Innovación del día: El internet".</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        Hoy descubriremos algo fascinante sobre "El internet". ¡Vamos a ver cómo el internet se usa para conectarnos a diferentes lugares del mundo desde nuestros dispositivos!
+                    </div>
+                </div>
+                <div id="video-internet" class="section">
+                    <div class="step-title">PASO 2 (4 minutos): Revisar diapositiva 7 Vídeo "¿Qué es el internet?"</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        Alguna vez se han preguntado: ¿Qué es el internet? Veamos este video corto que nos explica qué es y cómo funciona así aprenderemos como hace funcionar nuestros dispositivos cuando se conectan a internet.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="activity-3" class="activity">
+            <div class="banner" onclick="toggleContent('brain_gym')">
+                <div class="title">🧠 Actividad 3: Brain Gym (8 pasos) ⏰ Tiempo: 12.5 minutos</div>
+                <div class="subtitle">Introducir el Brain Gym y preparar a los estudiantes para aprender sobre el uso de dispositivos digitales y sus funciones.</div>
+            </div>
+            <div id="brain_gym" class="content">
+                <div class="section">
+                    <div class="step-title">PASO 1 (2 minutos): Revisar diapositiva 8 "Brain Gym".</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        ¡Genios, es hora de activar nuestro cerebro con un poco de Brain Gym! Hoy vamos a descubrir cómo diferentes dispositivos como tablets, computadoras y smartphones nos ayudan a hacer cosas divertidas como ver videos, jugar y aprender. Un dispositivo digital es cualquier cosa que usamos para conectarnos a internet, como una tablet o un smartphone. ¡Presten atención porque hay un Easter Egg (una pregunta especial) al final de la clase!
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="step-title">PASO 2 (1 minuto): Revisar dispositiva 9 "LOG IN"</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        Ahora sí, abriremos su navegador y vayan al sitio que aparece en pantalla para acceder a los recursos de la clase. Vamos a realizar la Misión 2: Quest y el Challenge. Para realizar esta actividad tendremos un tiempo de 5 minutos.
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="step-title">PASO 3 (1 minuto): Revisar dispositiva 10: "Realizar: Quest y Challenge."</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        N/A
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="step-title">PASO 4 (5 minutos): Revisar diapositiva 11 "TIMER de 5 minutos"</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        N/A
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="step-title">PASO 5 (1 minuto): Revisar diapositiva 12 "Reconocer dispositivos digitales".</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        ¿Alguien puede mencionar otro dispositivo digital que usamos para conectarnos a internet? ¡Correcto! Usamos la computadora para hacer tareas. ¿Qué más? ¡Exacto, también usamos la Smart TV para ver programas y aprender cosas nuevas!
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="step-title">PASO 6 (2 minutos): Revisar diapositiva 13 "Conectividad y actividades en línea".</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        La conectividad es importante porque nos permite acceder a todas esas actividades divertidas y educativas en internet. Sin conectividad, no podríamos ver videos o jugar juegos en línea. Las actividades en línea son todo lo que hacemos en internet, como ver videos, jugar juegos y aprender con aplicaciones. Por ejemplo, usamos YouTube para ver videos divertidos y educativos.
+                    </div>
+                </div>
+                <div id="step-7" class="section">
+                    <div class="step-title">PASO 7 (2 minutos): Reconocer actividades en línea.</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        ¿Quién puede mencionar otra actividad en línea que disfruten hacer? ¡Muy bien! Jugar juegos en la tablet. ¿Qué más? ¡Exacto, escuchar música en la Smart TV! Las actividades en línea nos permiten aprender y divertirnos de muchas maneras.
+                    </div>
+                </div>
+                <div id="step-8" class="section">
+                    <div class="step-title">PASO 8 (0.5 minutos): Revisar diapositiva 14 "Objetivos de la misión alcanzados"</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        N/A
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="activity-4" class="activity">
+            <div class="banner" onclick="toggleContent('state_change')">
+                <div class="title">🔄 Actividad 4: State Change (2 pasos) ⏰ Tiempo: 2 minutos</div>
+                <div class="subtitle">Relajar y desestresar a los estudiantes para prepararlos para el siguiente segmento de la clase.</div>
+            </div>
+            <div id="state_change" class="content">
+                <div class="section">
+                    <div class="step-title">PASO 1 (1 minuto): Revisar diapositiva 15 de "Brain Vitamin".</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        ¡Genios, vamos a relajarnos un poco con un juego divertido! Cada uno va a elegir su animal favorito y vamos a imitar cómo se movería ese animal si estuviera danzando o jugando. ¿Alguien quiere empezar con su elección?
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="step-title">PASO 2 (1 minuto): Revisar diapositiva 16: "Imita a un animal".</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        ¡Muy bien, ahora todos imiten a ese animal! Si eligen ser un león, vamos a caminar como uno; si eligen ser una mariposa, vamos a movernos suavemente como si voláramos. ¡Vamos a disfrutar moviéndonos juntos!
+                    </div>
+                </div>
+            </div>
+        </div>
+<div id="activity-5" class="activity">
+            <div class="banner" onclick="toggleContent('team_gnius')">
+                <div class="title">👥 Actividad 5: Team Gnius (3 pasos) ⏰ Tiempo: 2 minutos</div>
+                <div class="subtitle">Formar parejas para trabajar juntos en el challenge.</div>
+            </div>
+            <div id="team_gnius" class="content">
+                <div class="section">
+                    <div class="step-title">PASO 1 (0.5 minutos): Revisar diapositiva 17: "Team Gnius" Formación de parejas.</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        ¡Genios, ahora vamos a formar parejas! Encuentra a tu compañero de equipo y siéntense juntos. Tienen 30 segundos para hacerlo.
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="step-title">PASO 2 (0.5 minutos): Revisar diapositiva 18 " Recoger material"-TIMER 30 segundos</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        Cada pareja necesita un dispositivo para completar el challenge. Un integrante de cada pareja venga a recoger un dispositivo (Magic tablet) de la mesa. Tienen 30 segundos para hacerlo.
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="step-title">PASO 3 (1 minuto): Inicio de la actividad.</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        ¡Genios, ahora que tienen a sus compañeros y dispositivos, vamos a prepararnos para el desafío! En un momento recibirán las instrucciones para el reto. Tienen 1 minuto para organizarse y estar listos.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="activity-6" class="activity">
+            <div class="banner" onclick="toggleContent('challenge')">
+                <div class="title">⚔️ Actividad 6: Challenge (6 pasos) ⏰ Tiempo: 18.5 minutos</div>
+                <div class="subtitle">Presentar el desafío de la clase.</div>
+            </div>
+            <div id="challenge" class="content">
+                <div class="section">
+                    <div class="step-title">PASO 1 (1 minuto): Revisar diapositiva 19 "Challenge".</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        ¡Genios, es momento del desafío! Hoy vamos a realizar el reto 'Emparejando nuestros dispositivos con nuestras actividades'. Usaremos nuestras Magic Tablets para dibujar los dispositivos que hemos aprendido a identificar y las actividades comunes que podemos realizar con ellos. Por ejemplo, pueden elegir una tablet y emparejarla con ver videos. Tienen 1 minuto para escuchar y entender el desafío.
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="step-title">PASO 2 (1 minuto): Revisar diapositiva 20 "Dibuja y empareja"</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        Cada pareja usará su Magic Tablet para completar el desafío. Aquí dibujarán los dispositivos que se les asignen junto con las actividades que pueden hacer con ellos. Por ejemplo, si dibujan un smartphone, podrían emparejarlo con... enviar mensajes.
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="step-title">PASO 3 (10 minutos): Revisar diapositiva 21 "¡A trabajar" -TIMER de 10 min.</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        Trabajen en pareja para completar el desafío en sus Magic Tablets. Dibujen los dispositivos que se les asignen y las actividades que se pueden hacer con ellos. Por ejemplo, pueden dibujar una computadora y emparejarla con hacer tareas. Tienen 10 minutos para completar el desafío.
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="step-title">PASO 4 (3 minutos): Revisar diapositiva 22 "GAME OVER".</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        Revisen su trabajo en las Magic Tablets y prepárense para compartir lo que han aprendido con la clase. Cada pareja tendrá 1 minuto para presentar su dibujo, emparejar el dispositivo con la actividad, y explicar las actividades que se pueden hacer con el dispositivo que dibujaron.
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="step-title">PASO 5 (3 minutos): Revisar diapositiva 23 "Explica tus resultados"</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        N/A
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="step-title">PASO 6 (0.5 minutos): Revisar dispositiva 24 "Objetivos de la Misión alcanzados"</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        N/A
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="activity-7" class="activity">
+            <div class="banner" onclick="toggleContent('easter_egg')">
+                <div class="title">🥚 Actividad 7: Easter Egg (5 pasos) ⏰ Tiempo: 4.5 minutos</div>
+                <div class="subtitle">Describir la dinámica del Easter Egg a los estudiantes.</div>
+            </div>
+            <div id="easter_egg" class="content">
+                <div class="section">
+                    <div class="step-title">PASO 1 (0.5 minutos): Revisar diapositiva 25 "Easter Egg".</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        ¡Sorpresa, Genios! Es hora de un desafío rápido para ver quién ha estado prestando atención. La siguiente diapositiva tiene una pregunta sobre los dispositivos digitales que hemos discutido hoy. Voy a premiar con Mon-e a las tres primeras personas que me den la respuesta correcta. Recuerden, la dinámica es la siguiente: en cuanto pase a la siguiente diapositiva, lean la pregunta y si saben la respuesta, levanten la mano. No digan la respuesta en voz alta, solo levanten la mano. Yo seleccionaré a 3 de ustedes. ¿Listos?
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="step-title">PASO 2 (1 minuto): Revisar diapositiva 26 "Pregunta del Easter Egg".</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        Aquí va la pregunta: ¿Cuál de los siguientes dispositivos me pueden ayudar a realizar una llamada telefónica a mi mamá? Opción 1: TV u Opción 2: Smartphone. Levanten la mano si saben la respuesta.
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="step-title">PASO 3 (1 minuto): Seleccionar a 3 estudiantes para que respondan.</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        Veamos, ¿quién sabe la respuesta? Levanten la mano... [Seleccionar a 3 estudiantes].
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="step-title">PASO 4 (1 minuto): Pedir a los 3 estudiantes que den su respuesta en voz baja.</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        Ven aquí y dime tu respuesta en voz baja para que los demás no escuchen.
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="step-title">PASO 5 (1 minuto): Revisar diapositiva 27: "Respuesta correcta".</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        Muy bien, la respuesta correcta es el smartphone en este caso tiene la función para poder llamar y comunicarte con los demás. ¡Excelente trabajo, Genios!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="activity-8" class="activity">
+            <div class="banner" onclick="toggleContent('honor_dojo')">
+                <div class="title">🎖️ Actividad 8: Honor de Dojo (2 pasos) ⏰ Tiempo: 2 minutos</div>
+                <div class="subtitle">Reconocer y celebrar los logros de los estudiantes.</div>
+            </div>
+            <div id="honor_dojo" class="content">
+                <div class="section">
+                    <div class="step-title">PASO 1 (1 minuto): Revisar diapositiva 28 "Felicidades por su gran trabajo".</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        Vamos a reconocer a los Genios que más destacaron hoy. Los seleccionamos por su creatividad, esfuerzo y participación activa durante el desafío. Felicidades a [Nombre], [Nombre], y [Nombre] por su excelente trabajo. ¡Bien hecho!
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="step-title">PASO 2 (1 minuto): Revisar diapositiva 29 " Logotipo de Honor de dojo".</div>
+                    <div class="dialogue">
+                        <div class="dialogue-header">DIÁLOGO SUGERIDO</div>
+                        Ahora, recojan todo lo que usaron hoy y asegúrense de que el lugar quede ordenado. Recuerden que parte de ser un Genio es también cuidar nuestro entorno. ¡Nos vemos en la próxima misión, Genios!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+
+        function updateContent() {
+    var time = document.getElementById("class-time").value;
+    document.getElementById("selected-time").innerText = "Tiempo efectivo de clase: " + time + " minutos";
+
+    if (time === "45") {
+        document.getElementById("activity-4").style.display = "none";
+        document.getElementById("video-internet").style.display = "none";
+        document.getElementById("step-7").style.display = "block";
+        document.getElementById("step-8").style.display = "block";
+    } else if (time === "40") {
+        document.getElementById("activity-4").style.display = "none";
+        document.getElementById("video-internet").style.display = "block";
+        document.getElementById("step-7").style.display = "none";
+        document.getElementById("step-8").style.display = "none";
+    } else {
+        document.getElementById("activity-4").style.display = "block";
+        document.getElementById("video-internet").style.display = "block";
+        document.getElementById("step-7").style.display = "block";
+        document.getElementById("step-8").style.display = "block";
+    }
+}
+    </script>
+</body>
+</html>
